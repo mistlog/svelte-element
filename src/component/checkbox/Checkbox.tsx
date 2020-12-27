@@ -7,21 +7,21 @@ function UI(state: ICheckboxState, { checked }: ICheckboxProps) {
         <span class={state.inputLabelStyle}>
             <slot />
         </span>
-    </label>
+    </label>;
 }
 
 export interface ICheckboxProps {
     /**
-    * if the Checkbox is checked
-    * @default false
-    */
-    checked?: boolean
+     * if the Checkbox is checked
+     * @default false
+     */
+    checked?: boolean;
     /**
      * whether the Checkbox is disabled
      * @default false
      */
-    disabled?: boolean
-    onChange?: InputOnChangeHandler
+    disabled?: boolean;
+    onChange?: InputOnChangeHandler;
 }
 
 export default function _(props: ICheckboxProps) {
@@ -35,10 +35,10 @@ export default function _(props: ICheckboxProps) {
 }
 
 interface ICheckboxState {
-    inputStyle: string
-    inputSymbolStyle: string
-    inputWrapperStyle: string
-    inputLabelStyle: string
+    inputStyle: string;
+    inputSymbolStyle: string;
+    inputWrapperStyle: string;
+    inputLabelStyle: string;
     style: string;
 }
 
@@ -47,13 +47,12 @@ function State({ checked, disabled }: ICheckboxProps) {
 
     state.inputSymbolStyle = "el-checkbox__inner";
     state.inputStyle = "el-checkbox__original";
-    state.inputLabelStyle= "el-checkbox__label";
+    state.inputLabelStyle = "el-checkbox__label";
     state.style = "el-checkbox";
 
     {
-        "use watch";
-        state.inputWrapperStyle = Σ(
-            "el-checkbox__input", {
+        ("use watch");
+        state.inputWrapperStyle = Σ("el-checkbox__input", {
             "is-checked": checked,
             "is-disabled": disabled
         });

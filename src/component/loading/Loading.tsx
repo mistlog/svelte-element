@@ -4,12 +4,21 @@ import { css } from "emotion";
 export default function _(props) {
     const { className = "" } = props;
 
-    const style = Σ(css`position: relative;`, className);
-    const spinnerStyle = Σ('el-loading-spinner', { "is-full-screen": false }, css`
-        position: absolute;
-        display: inline-block;
-        left: 0;
-    `);
+    const style = Σ(
+        css`
+            position: relative;
+        `,
+        className
+    );
+    const spinnerStyle = Σ(
+        "el-loading-spinner",
+        { "is-full-screen": false },
+        css`
+            position: absolute;
+            display: inline-block;
+            left: 0;
+        `
+    );
     const wrapperStyle = css`
         display: block;
         position: absolute;
@@ -30,5 +39,5 @@ export default function _(props) {
                 </svg>
             </div>
         </div>
-    </div>
+    </div>;
 }

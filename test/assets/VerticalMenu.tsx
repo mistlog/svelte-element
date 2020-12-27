@@ -8,5 +8,5 @@ export default function _() {
                 <MenuItem key="tab2">Tab2</MenuItem>
             </SubMenu>
         </Menu>
-    </div>
+    </div>;
 }

@@ -6,5 +6,5 @@ export default function _() {
             <MenuItem key="tab1">Tab1</MenuItem>
             <MenuItem key="tab2">Tab2</MenuItem>
         </Menu>
-    </div>
+    </div>;
 }

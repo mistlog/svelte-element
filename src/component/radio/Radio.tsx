@@ -7,7 +7,7 @@ function UI(state: IRadioState, { value, checked }: IRadioProps) {
         <span class={state.inputLabelStyle}>
             <slot />
         </span>
-    </label>
+    </label>;
 }
 
 export interface IRadioProps {
@@ -15,17 +15,17 @@ export interface IRadioProps {
      * checked state of radio
      * @default false
      */
-    checked?: boolean
+    checked?: boolean;
     /**
      * whether Radio is disabled
      * @default false
      */
-    disabled?: boolean
+    disabled?: boolean;
     /**
      * the value of radio
      */
-    value?: string
-    onChange?: InputOnChangeHandler
+    value?: string;
+    onChange?: InputOnChangeHandler;
 }
 
 export default function _(props: IRadioProps) {
@@ -39,15 +39,14 @@ export default function _(props: IRadioProps) {
 }
 
 interface IRadioState {
-    inputStyle: string
-    inputSymbolStyle: string
-    inputWrapperStyle: string
-    inputLabelStyle: string
+    inputStyle: string;
+    inputSymbolStyle: string;
+    inputWrapperStyle: string;
+    inputLabelStyle: string;
     style: string;
 }
 
 function State({ checked, disabled }: IRadioProps) {
-
     let state = {} as IRadioState;
 
     state.inputSymbolStyle = "el-radio__inner";
@@ -56,14 +55,11 @@ function State({ checked, disabled }: IRadioProps) {
     state.style = "el-radio";
 
     {
-        "use watch";
-        state.inputWrapperStyle = Σ(
-            "el-radio__input",
-            {
-                "is-checked": checked,
-                "is-disabled": disabled
-            }
-        );
+        ("use watch");
+        state.inputWrapperStyle = Σ("el-radio__input", {
+            "is-checked": checked,
+            "is-disabled": disabled
+        });
     }
 }
 

@@ -1,6 +1,6 @@
 /**
  * credit: https://github.com/novacbn/svelte-simple-repl/blob/master/lib/util/functional.js
- * 
+ *
  * Returns a wrapper around given `callback`, that waits for `duration` to elapse before
  * calling `callback. Cancels previous dispatches within the `duration timeframe
  */

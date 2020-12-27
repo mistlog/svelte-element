@@ -27,41 +27,59 @@ export default function _() {
 
     const style = {
         sidebar: {
-            container: css`height:100%`,
-            menu: css`height:100%`
+            container: css`
+                height: 100%;
+            `,
+            menu: css`
+                height: 100%;
+            `
         },
         docs: css`
-            p > code, li > code {
+            p > code,
+            li > code {
                 color: #1a1a1a;
-                background-color: rgba(255,229,100,0.2);
+                background-color: rgba(255, 229, 100, 0.2);
                 font-size: 0.94em;
-                font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
-            }
-            
-            p > a, li > a {
-                background-color: rgba(187,239,253,0.3);
+                font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
             }
 
-            p > a, li > a {
+            p > a,
+            li > a {
+                background-color: rgba(187, 239, 253, 0.3);
+            }
+
+            p > a,
+            li > a {
                 color: #1a1a1a;
-                text-decoration: none
+                text-decoration: none;
             }
 
-            p > a:hover, li > a:hover {
+            p > a:hover,
+            li > a:hover {
                 color: #409eff;
             }
-            
+
             padding: 10px 20px 20px 40px;
 
-            pre.language-tsx, pre.language-ts {
+            pre.language-tsx,
+            pre.language-ts {
                 display: inline-block;
             }
         `
     };
 
-    <main class={css`height:100%`}>
+    <main
+        class={css`
+            height: 100%;
+        `}
+    >
         <Skeleton>
-            <div class={css`display: flex`} slot="logo">
+            <div
+                class={css`
+                    display: flex;
+                `}
+                slot="logo"
+            >
                 <img src="images/element-logo.svg" alt="element-logo" />
                 <img src="images/svelte-logo.svg" alt="svelte-logo" width={20} height={20} />
             </div>
@@ -75,7 +93,10 @@ export default function _() {
                 <Router basepath={basepath}>
                     <Route path="/*">
                         {({ location }: { location: any }) => (
-                            <Menu defaultSelected={resolveComponentName(location)} className={style.sidebar.menu}>
+                            <Menu
+                                defaultSelected={resolveComponentName(location)}
+                                className={style.sidebar.menu}
+                            >
                                 <NavLink to="/">
                                     <MenuItem key="overview">Overview</MenuItem>
                                 </NavLink>
@@ -115,8 +136,8 @@ export default function _() {
                     <Route path="radio" component={RadioDocs} />
                     <Route path="checkbox" component={CheckboxDocs} />
                     <Route path="menu" component={MenuDocs} />
-                </Router >
+                </Router>
             </div>
         </Skeleton>
-    </main>
+    </main>;
 }

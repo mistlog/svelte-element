@@ -6,11 +6,11 @@ import { SvelteEventHandler } from "svelte-types/type/dom";
 export type EditorOnInputEvent = { detail: { code: string } };
 
 export interface IEditorProps {
-    language: string
-    defaultCode?: string
-    width?: number | "auto"
-    height?: number
-    onInput?: (event: EditorOnInputEvent) => void
+    language: string;
+    defaultCode?: string;
+    width?: number | "auto";
+    height?: number;
+    onInput?: (event: EditorOnInputEvent) => void;
 }
 
 export default function _(props: IEditorProps) {
@@ -20,14 +20,14 @@ export default function _(props: IEditorProps) {
     let code = defaultCode;
     let formattedCode = "";
     {
-        "use watch";
+        ("use watch");
         formattedCode = prism.highlight(code, prism.languages[language], language);
     }
 
     //
     const dispatch = createEventDispatcher();
     {
-        "use watch";
+        ("use watch");
         dispatch("input", { code });
     }
 
@@ -46,11 +46,11 @@ export default function _(props: IEditorProps) {
             pre::-webkit-scrollbar {
                 display: none;
             }
-            
+
             textarea::-webkit-scrollbar {
                 display: none;
             }
-            
+
             /* Hide scrollbar for IE, Edge and Firefox */
             textarea,
             pre {
@@ -82,8 +82,8 @@ export default function _(props: IEditorProps) {
             width: 100%;
             height: 100%;
             z-index: 1000;
-            margin:0px;
-            padding:0px
+            margin: 0px;
+            padding: 0px;
         `,
         editorAreaWrapper: css`
             position: absolute;
@@ -109,8 +109,8 @@ export default function _(props: IEditorProps) {
             height: 100%;
             line-height: 1.5;
             font-size: 13px;
-            font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono",
-            "Courier New", monospace;
+            font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New",
+                monospace;
         `
     };
 
@@ -124,8 +124,13 @@ export default function _(props: IEditorProps) {
                 </pre>
             </div>
             <div class={style.editorAreaWrapper}>
-                <textarea onScroll={syncScroll} spellcheck={false} bindValue={code} class={style.editorAreaStyle} />
+                <textarea
+                    onScroll={syncScroll}
+                    spellcheck={false}
+                    bindValue={code}
+                    class={style.editorAreaStyle}
+                />
             </div>
         </div>
-    </div >
+    </div>;
 }

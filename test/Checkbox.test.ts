@@ -34,11 +34,10 @@ describe("Checkbox", () => {
         const { container } = render(ClickCheckbox);
         const input = container.querySelector("input");
         expect(input.checked).toEqual(true);
-        await fireEvent(input, new MouseEvent('click', {}));
+        await fireEvent(input, new MouseEvent("click", {}));
         expect(input.checked).toEqual(false);
     });
-
-})
+});
 
 describe("CheckboxGroup", () => {
     test("empty checkbox group", () => {
@@ -51,9 +50,9 @@ describe("CheckboxGroup", () => {
         expect(normalize(container.outerHTML)).toMatchSnapshot();
 
         const [a, b, c] = container.getElementsByTagName("input");
-        await fireEvent(a, new MouseEvent('click', {}));
-        await fireEvent(b, new MouseEvent('click', {}));
-        await fireEvent(c, new MouseEvent('click', {}));
+        await fireEvent(a, new MouseEvent("click", {}));
+        await fireEvent(b, new MouseEvent("click", {}));
+        await fireEvent(c, new MouseEvent("click", {}));
         expect(normalize(container.outerHTML)).toMatchSnapshot();
     });
-})
+});

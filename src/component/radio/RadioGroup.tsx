@@ -1,23 +1,33 @@
-function UI(state: IRadioGroupState, { radios }: IRadioGroupProps, onChangeHandler: InputOnChangeHandler) {
+function UI(
+    state: IRadioGroupState,
+    { radios }: IRadioGroupProps,
+    onChangeHandler: InputOnChangeHandler
+) {
     <each from={radios}>
-        {((radio: IRadio, key = radio.value) => (
-            <Radio value={radio.value} checked={radio.value === state.selected} onChange={onChangeHandler}>{radio.label}</Radio>
-        ))}
-    </each>
+        {(radio: IRadio, key = radio.value) => (
+            <Radio
+                value={radio.value}
+                checked={radio.value === state.selected}
+                onChange={onChangeHandler}
+            >
+                {radio.label}
+            </Radio>
+        )}
+    </each>;
 }
 
 export interface IRadio {
-    value: string
-    label: string
+    value: string;
+    label: string;
 }
 
 export interface IRadioGroupProps {
-    radios: Array<IRadio>
-    defaultSelected?: string
+    radios: Array<IRadio>;
+    defaultSelected?: string;
     /**
      * triggers when the selected radio changes
      */
-    onChange?: RadioGroupOnChangeHandler
+    onChange?: RadioGroupOnChangeHandler;
 }
 
 export default function _(props: IRadioGroupProps) {
@@ -30,12 +40,12 @@ export default function _(props: IRadioGroupProps) {
     <Event />;
 
     //@ts-ignore
-    <UI />
+    <UI />;
 }
 
 //
 interface IRadioGroupState {
-    selected: string
+    selected: string;
 }
 
 function State({ defaultSelected }: IRadioGroupProps) {
@@ -44,7 +54,7 @@ function State({ defaultSelected }: IRadioGroupProps) {
 
 //
 export type RadioGroupEvent = { detail: { selected: string } };
-export type RadioGroupOnChangeHandler = (event: RadioGroupEvent) => void
+export type RadioGroupOnChangeHandler = (event: RadioGroupEvent) => void;
 
 function Event(state: IRadioGroupState) {
     const dispatch = createEventDispatcher();

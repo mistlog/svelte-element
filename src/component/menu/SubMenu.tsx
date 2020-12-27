@@ -1,6 +1,5 @@
 function UI(state: ISubMenuState, { title }: ISubMenuProps) {
-
-    const onOpen = e => state.isOpened = !state.isOpened;
+    const onOpen = e => (state.isOpened = !state.isOpened);
 
     <li class={state.style}>
         <div class={state.titleStyle} onClick={onOpen}>
@@ -14,7 +13,7 @@ function UI(state: ISubMenuState, { title }: ISubMenuProps) {
                 </ul>
             </div>
         </if>
-    </li>
+    </li>;
 }
 
 export interface ISubMenuProps {
@@ -22,12 +21,12 @@ export interface ISubMenuProps {
      * group title
      * @default ""
      */
-    title: string
+    title: string;
 
     /**
      * @default true
      */
-    isOpened?: boolean
+    isOpened?: boolean;
 }
 
 export default function _(props: ISubMenuProps) {
@@ -42,11 +41,11 @@ export default function _(props: ISubMenuProps) {
 
 //
 interface ISubMenuState {
-    style: string
-    menuStyle: string
-    titleStyle: string
-    arrowStyle: string
-    isOpened: boolean
+    style: string;
+    menuStyle: string;
+    titleStyle: string;
+    arrowStyle: string;
+    isOpened: boolean;
 }
 
 function State({ isOpened }: ISubMenuProps) {
@@ -57,12 +56,10 @@ function State({ isOpened }: ISubMenuProps) {
     state.arrowStyle = "el-submenu__icon-arrow el-icon-arrow-down";
 
     {
-        "use watch";
-        state.style = Σ(
-            "el-submenu", {
+        ("use watch");
+        state.style = Σ("el-submenu", {
             "is-opened": state.isOpened
         });
-
     }
 }
 

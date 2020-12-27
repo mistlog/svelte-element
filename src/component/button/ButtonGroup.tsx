@@ -1,7 +1,7 @@
 function UI(style: string) {
     <div class={style}>
         <slot />
-    </div>
+    </div>;
 }
 
 export default function _() {

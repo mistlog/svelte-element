@@ -10,14 +10,12 @@ import ClickButton from "./assets/ClickButton.svelte";
 import TwoButtons from "./assets/TwoButtons.svelte";
 
 describe("Button", () => {
-
     test("text and default color", () => {
         const { container } = render(DefaultButton);
         const button = container.querySelector("button");
         expect(normalize(button.outerHTML)).toMatchSnapshot();
     });
 
-    
     test("button type", () => {
         const { container } = render(Button, { type: "primary" } as IButtonProps);
         const button = container.querySelector("button");
@@ -47,10 +45,10 @@ describe("Button", () => {
         const button = container.querySelector("button");
         expect(normalize(button.outerHTML)).toMatchSnapshot();
 
-        await fireEvent(button, new MouseEvent('click', {}));
+        await fireEvent(button, new MouseEvent("click", {}));
         expect(normalize(button.outerHTML)).toMatchSnapshot();
     });
-})
+});
 
 describe("ButtonGroup", () => {
     test("empty button group", () => {
@@ -64,4 +62,4 @@ describe("ButtonGroup", () => {
         const buttonGroup = container.querySelector(".el-button-group");
         expect(normalize(buttonGroup.outerHTML)).toMatchSnapshot();
     });
-})
+});

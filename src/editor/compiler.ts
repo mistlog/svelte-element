@@ -13,7 +13,6 @@ const BuiltInModules = {
 };
 
 export function compileComponent(code: string, deps = {}) {
-
     let transcribed = null;
 
     try {
@@ -22,7 +21,6 @@ export function compileComponent(code: string, deps = {}) {
         console.log(`transcribe failed, error: ${error.message}`);
         throw error;
     }
-
 
     //
     const result = compile(transcribed, { format: "cjs", dev: true });
@@ -46,7 +44,7 @@ function executeScript(code: string, deps = {}) {
 function createRequire(deps = {}) {
     return (path: string) => {
         return { ...BuiltInModules, ...deps }[path];
-    }
+    };
 }
 
 function transcribe(code: string) {
