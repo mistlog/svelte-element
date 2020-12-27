@@ -17,13 +17,21 @@ export default function _() {
     const resolveComponentName = (location: { pathname: string }) => {
         const segments = location.pathname.split("/");
         const name = segments[segments.length - 1];
-        // TODO, change it to name === "" || name === "svelte-element"
+
+        //@ts-ignore
+        if (__BuildEnv__ === "prod") {
+            return name === "" || name === "svelte-element" ? "overview" : name;
+        }
 
         return name === "" ? "overview" : name;
     };
 
-    // TODO, change it to /svelte-element
-    const basepath = "/";
+    let basepath = "/";
+
+    //@ts-ignore
+    if (__BuildEnv__ === "prod") {
+        basepath = "/svelte-element";
+    }
 
     const style = {
         sidebar: {
