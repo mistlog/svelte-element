@@ -1,7 +1,6 @@
 import { RadioGroup } from "../../src/component";
 
 export default function _() {
-    
     const defaultSelected = "a";
 
     const radios = [
@@ -13,5 +12,9 @@ export default function _() {
         const { selected } = event.detail;
     };
 
-    <RadioGroup radios={radios} defaultSelected={defaultSelected} onChange={handleSelectedChange} />;
+    <RadioGroup
+        radios={radios}
+        defaultSelected={defaultSelected}
+        onChange={handleSelectedChange}
+    />;
 }

@@ -1,23 +1,23 @@
 import Notification, { INotificationWillUnmountEvent, NotificationType } from "./Notification";
 
 export interface INotificationConfig {
-    title: string
-    message: string
-    duration?: number
-    type?: NotificationType
+    title: string;
+    message: string;
+    duration?: number;
+    type?: NotificationType;
 }
 
 export function notification(config: INotificationConfig) {
     const { title = "", message = "", duration = 3000, type } = config || {};
 
     //
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     document.body.appendChild(div);
 
-    const className = '.el-notification';
+    const className = ".el-notification";
 
     // credit: element react
-    const instances = document.querySelectorAll(className)
+    const instances = document.querySelectorAll(className);
     const lastInstance = instances[instances.length - 1] as HTMLElement;
     const top = lastInstance ? lastInstance.getBoundingClientRect().bottom + 16 : 16;
 
@@ -26,7 +26,7 @@ export function notification(config: INotificationConfig) {
             target: div,
             props: { top, title, message, type },
             intro: true
-        },
+        }
     ]);
 
     //
@@ -35,14 +35,14 @@ export function notification(config: INotificationConfig) {
             component.$destroy();
             component = null;
         }
-    }
+    };
 
     component.$on("close", () => {
         removeNotification();
-    })
+    });
 
     component.$on("willUnmount", (e: INotificationWillUnmountEvent) => {
-        // credit: element react 
+        // credit: element react
         const { height, top } = e.detail;
         const instances = document.querySelectorAll(className);
         for (let i = 0; i < instances.length; ++i) {
@@ -52,11 +52,10 @@ export function notification(config: INotificationConfig) {
                 element.style.setProperty("top", (rect.top - height - 16).toString() + "px");
             }
         }
-        document.body.removeChild(div)
-    })
+        document.body.removeChild(div);
+    });
 
     setTimeout(() => {
         removeNotification();
     }, duration);
-
 }

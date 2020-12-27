@@ -1,8 +1,7 @@
-
 function UI(style: string) {
     <div class={style}>
         <slot />
-    </div>
+    </div>;
 }
 
 export interface IRowProps {
@@ -10,8 +9,8 @@ export interface IRowProps {
      * @default 0
      * grid spacing
      */
-    gutter?: number
-    className?: string
+    gutter?: number;
+    className?: string;
 }
 
 export default function _(props: IRowProps) {
@@ -24,7 +23,7 @@ export default function _(props: IRowProps) {
     <Style />;
 
     //@ts-ignore
-    <UI/>;
+    <UI />;
 }
 
 export interface IRowContext {
@@ -38,23 +37,20 @@ function Context(gutter: number) {
     const gutterStore = writable(gutter);
     setContext<IRowContext>("gutter", gutterStore);
 
-    let $gutterStore : AutoSubscribe<typeof gutterStore>;
+    let $gutterStore: AutoSubscribe<typeof gutterStore>;
     {
-        "use watch";
+        ("use watch");
         $gutterStore = gutter;
     }
 }
 
 function Style({ className }: IRowProps) {
-    const style = Σ(
-        "el-row",
-        {
-            [className]: Boolean(className)
-        }
-    );
+    const style = Σ("el-row", {
+        [className]: Boolean(className)
+    });
 }
 
 import { Σ } from "../../common/clsx/index";
 import { setContext } from "../../common/svelte/index";
-import { writable, Writable } from 'svelte/store';
+import { writable, Writable } from "svelte/store";
 import { AutoSubscribe } from "../../common/type";

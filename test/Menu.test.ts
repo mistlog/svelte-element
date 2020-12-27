@@ -9,32 +9,31 @@ describe("Menu", () => {
         const { container } = render(HorizontalMenu);
         const menu = container.querySelector(".el-menu");
         expect(normalize(menu.outerHTML)).toMatchSnapshot();
-    })
+    });
 
     test("select menu item", async () => {
         const { container } = render(HorizontalMenu);
 
         const [tab1, tab2] = container.querySelectorAll(".el-menu-item");
-        await fireEvent(tab2, new MouseEvent('click', {}));
+        await fireEvent(tab2, new MouseEvent("click", {}));
 
         const menu = container.querySelector(".el-menu");
         expect(normalize(menu.outerHTML)).toMatchSnapshot();
-    })
+    });
 
     test("vertical menu", () => {
         const { container } = render(VerticalMenu);
         const menu = container.querySelector(".el-menu");
         expect(normalize(menu.outerHTML)).toMatchSnapshot();
-    })
+    });
 
     test("open submenu", async () => {
         const { container } = render(VerticalMenu);
 
         const submenuTitle = container.querySelector(".el-submenu__title");
-        await fireEvent(submenuTitle, new MouseEvent('click', {}));
+        await fireEvent(submenuTitle, new MouseEvent("click", {}));
 
         const menu = container.querySelector(".el-menu");
         expect(normalize(menu.outerHTML)).toMatchSnapshot();
-    })
-
-})
+    });
+});

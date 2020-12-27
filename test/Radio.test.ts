@@ -34,11 +34,11 @@ describe("Radio", () => {
         expect(a.checked).toEqual(true);
         expect(b.checked).toEqual(false);
 
-        await fireEvent(b, new MouseEvent('click', {}));
+        await fireEvent(b, new MouseEvent("click", {}));
         expect(a.checked).toEqual(false);
         expect(b.checked).toEqual(true);
     });
-})
+});
 
 describe("RadioGroup", () => {
     test("empty radio group", () => {
@@ -51,7 +51,7 @@ describe("RadioGroup", () => {
         expect(normalize(container.outerHTML)).toMatchSnapshot();
 
         const [a, b] = container.getElementsByTagName("input");
-        await fireEvent(b, new MouseEvent('click', {}));
+        await fireEvent(b, new MouseEvent("click", {}));
         expect(normalize(container.outerHTML)).toMatchSnapshot();
     });
-})
+});

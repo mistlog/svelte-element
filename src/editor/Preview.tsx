@@ -27,7 +27,7 @@ export default function _(props: IPreview) {
     const notify = debounce(config => notification(config), 1000);
 
     {
-        "use watch";
+        ("use watch");
 
         if (mounted) {
             refreshComponent(code, deps);
@@ -45,7 +45,7 @@ export default function _(props: IPreview) {
                 duration: 5000
             });
             return true;
-        }
+        };
     });
 
     onDestroy(() => {
@@ -92,7 +92,11 @@ export default function _(props: IPreview) {
 
     <div bindRef={container} style="width:100%; height:100%">
         <if condition={!isReady}>
-            <Loading className={css`min-height:300px`} />
+            <Loading
+                className={css`
+                    min-height: 300px;
+                `}
+            />
         </if>
-    </div>
+    </div>;
 }

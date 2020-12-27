@@ -1,2 +1,2 @@
-declare module '*.snippet';
-declare module '*.svx';
+declare module "*.snippet";
+declare module "*.svx";

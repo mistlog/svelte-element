@@ -1,21 +1,19 @@
 function UI(state: IMenuItemState, { key }: IMenuItemProps, $selected: string) {
-
-    const updateSelected = () => $selected = key;
+    const updateSelected = () => ($selected = key);
 
     <li class={state.style} onClick={updateSelected}>
         <slot />
-    </li>
+    </li>;
 }
 
 export interface IMenuItemProps {
     /**
      * unique identification
      */
-    key: string
+    key: string;
 }
 
 export default function _(props: IMenuItemProps) {
-
     const { key } = props;
 
     //@ts-ignore
@@ -35,17 +33,15 @@ function Store() {
 
 //
 interface IMenuItemState {
-    style: string
+    style: string;
 }
 
 function State({ key }: IMenuItemProps, $selected: string) {
     const state = {} as IMenuItemState;
 
     {
-        "use watch";
-        state.style = Σ(
-        "el-menu-item",
-        {
+        ("use watch");
+        state.style = Σ("el-menu-item", {
             "is-active": $selected === key
         });
     }

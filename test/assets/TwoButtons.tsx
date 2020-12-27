@@ -5,5 +5,5 @@ export default function _() {
     <ButtonGroup>
         <Button type="primary" icon="edit"></Button>
         <Button type="primary" icon="share"></Button>
-    </ButtonGroup>
+    </ButtonGroup>;
 }

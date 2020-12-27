@@ -1,7 +1,7 @@
 function UI(style: string) {
-    <div class={style} >
+    <div class={style}>
         <slot />
-    </div>
+    </div>;
 }
 
 export interface IColProps {
@@ -9,13 +9,13 @@ export interface IColProps {
      * number of column the grid spans
      * @default: 24
      */
-    span?: number
+    span?: number;
     /**
      * number of spacing on the left side of the grid
      * @default: 0
      */
-    offset?: number
-    className?: string
+    offset?: number;
+    className?: string;
 }
 
 export default function _(props: IColProps) {
@@ -39,9 +39,13 @@ function Style($gutter: number | undefined, { span, offset, className }: IColPro
     let style = "";
 
     {
-        "use watch";
+        ("use watch");
 
-        const gutterStyle = Boolean($gutter) ? css`padding: 0px ${$gutter / 2}px;` : "";
+        const gutterStyle = Boolean($gutter)
+            ? css`
+                  padding: 0px ${$gutter / 2}px;
+              `
+            : "";
 
         style = Σ(
             "el-col",

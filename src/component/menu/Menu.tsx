@@ -2,15 +2,15 @@ function UI(state: IMenuState) {
     // use style: override border-bottom
     <ul class={state.style} style={`border-bottom: none`}>
         <slot />
-    </ul>
+    </ul>;
 }
 
 export interface IMenuProps {
-    defaultSelected?: string
+    defaultSelected?: string;
     /**
      * @default "vertical"
      */
-    mode?: "horizontal" | "vertical"
+    mode?: "horizontal" | "vertical";
     className?: string;
 }
 
@@ -28,17 +28,13 @@ export default function _(props: IMenuProps) {
 }
 
 interface IMenuState {
-    style: string
+    style: string;
 }
 
 function State({ className, mode }: IMenuProps) {
     const state = {} as IMenuState;
 
-    state.style = Σ(
-        "el-menu",
-        `el-menu--${mode}`,
-        className
-    )
+    state.style = Σ("el-menu", `el-menu--${mode}`, className);
 }
 
 export interface IMenuContext {
@@ -49,9 +45,9 @@ function Context(defaultSelected: string) {
     let selectedStore = writable(defaultSelected);
     setContext<IMenuContext>("selected", selectedStore);
 
-    let $selectedStore : AutoSubscribe<typeof selectedStore>;
+    let $selectedStore: AutoSubscribe<typeof selectedStore>;
     {
-        "use watch";
+        ("use watch");
         $selectedStore = defaultSelected;
     }
 }

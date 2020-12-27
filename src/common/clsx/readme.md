@@ -4,10 +4,9 @@
 
 This module is available in three formats:
 
-* **ES Module**: `dist/clsx.m.js`
-* **CommonJS**: `dist/clsx.js`
-* **UMD**: `dist/clsx.min.js`
-
+-   **ES Module**: `dist/clsx.m.js`
+-   **CommonJS**: `dist/clsx.js`
+-   **UMD**: `dist/clsx.min.js`
 
 ## Install
 
@@ -15,52 +14,52 @@ This module is available in three formats:
 $ npm install --save clsx
 ```
 
-
 ## Usage
 
 ```js
-import clsx from 'clsx';
+import clsx from "clsx";
 
 // Strings (variadic)
-clsx('foo', true && 'bar', 'baz');
+clsx("foo", true && "bar", "baz");
 //=> 'foo bar baz'
 
 // Objects
-clsx({ foo:true, bar:false, baz:isTrue() });
+clsx({ foo: true, bar: false, baz: isTrue() });
 //=> 'foo baz'
 
 // Objects (variadic)
-clsx({ foo:true }, { bar:false }, null, { '--foobar':'hello' });
+clsx({ foo: true }, { bar: false }, null, { "--foobar": "hello" });
 //=> 'foo --foobar'
 
 // Arrays
-clsx(['foo', 0, false, 'bar']);
+clsx(["foo", 0, false, "bar"]);
 //=> 'foo bar'
 
 // Arrays (variadic)
-clsx(['foo'], ['', 0, false, 'bar'], [['baz', [['hello'], 'there']]]);
+clsx(["foo"], ["", 0, false, "bar"], [["baz", [["hello"], "there"]]]);
 //=> 'foo bar baz hello there'
 
 // Kitchen sink (with nesting)
-clsx('foo', [1 && 'bar', { baz:false, bat:null }, ['hello', ['world']]], 'cya');
+clsx("foo", [1 && "bar", { baz: false, bat: null }, ["hello", ["world"]]], "cya");
 //=> 'foo bar hello world cya'
 ```
-
 
 ## API
 
 ### clsx(...input)
+
 Returns: `String`
 
 #### input
+
 Type: `Mixed`
 
-The `clsx` function can take ***any*** number of arguments, each of which can be an Object, Array, Boolean, or String.
+The `clsx` function can take **_any_** number of arguments, each of which can be an Object, Array, Boolean, or String.
 
 > **Important:** _Any_ falsey values are discarded!<br>Standalone Boolean values are discarded as well.
 
 ```js
-clsx(true, false, '', null, undefined, 0, NaN);
+clsx(true, false, "", null, undefined, 0, NaN);
 //=> ''
 ```
 
@@ -74,12 +73,11 @@ All versions of Node.js are supported.
 
 All browsers that support [`Array.isArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#Browser_compatibility) are supported (IE9+).
 
->**Note:** For IE8 support and older, please install `clsx@1.0.x` and beware of [#17](https://github.com/lukeed/clsx/issues/17).
-
+> **Note:** For IE8 support and older, please install `clsx@1.0.x` and beware of [#17](https://github.com/lukeed/clsx/issues/17).
 
 ## Related
 
-- [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
+-   [obj-str](https://github.com/lukeed/obj-str) - A smaller (96B) and similiar utility that only works with Objects.
 
 ## License
 
