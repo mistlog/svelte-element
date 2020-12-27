@@ -1,0 +1,27 @@
+import { Button } from "svelte-element";
+
+export default function _() {
+    let loading = false;
+    <Button loading={loading} type="primary" onClick={event => loading = true}>
+        {loading ? "Loading..." : "Load"}
+    </Button>;
+
+    let changeIcon = false;
+    <Button icon={changeIcon ? "delete" : "edit"} type="primary" onClick={event => {
+        changeIcon = !changeIcon;
+        // remove focus
+        event.currentTarget.blur();
+    }}>
+        {changeIcon ? "Delete" : "Edit"}
+    </Button>;
+
+    let removeContent = false;
+    <Button type="primary" onClick={event => removeContent = !removeContent}>
+        <if condition={!removeContent}>
+            Click It To Remove Content
+            <else>
+                Default
+            </else>
+        </if>
+    </Button>
+}

@@ -1,0 +1,90 @@
+---
+layout: docs
+---
+
+<script>
+	import snippetBasicLayout from "./snippet/layout-basic.snippet";
+	import snippetColumnSpacing from "./snippet/column-spacing.snippet";
+    import snippetColumnOffset from "./snippet/column-offset.snippet";
+    
+    import REPL from "../../editor/REPL";
+    import { Row, Col } from "../../component/index";
+    import { css } from "emotion";
+
+    const deps = {
+      "svelte-element": { Row, Col }
+    };
+
+    const style = {
+        container: css`
+            .demo-layout .bg-purple-dark { background: #99a9bf; }
+            .demo-layout .bg-purple { background: #d3dce6; }
+            .demo-layout .bg-purple-light { background: #e5e9f2; }
+            .demo-layout .grid-content { border-radius: 4px; min-height: 36px; }
+            .demo-layout .el-row { margin-bottom: 20px; }
+            .el-row:last-of-type { margin-bottom: 0px; }
+        `
+    };
+
+</script>
+
+# Layout
+
+Quickly and easily create layouts with the basic 24-column.
+
+## Span
+
+With row and col, we can easily manipulate the layout using the `span` attribute.
+
+<div class={style.container}>
+    <REPL defaultCode={snippetBasicLayout} deps={deps} orientation="vertical"/>
+</div>
+
+## Gutter
+
+Row provides `gutter` attribute to specify spacings between columns, and its default value is 0.
+
+<div class={style.container}>
+    <REPL defaultCode={snippetColumnSpacing} deps={deps} orientation="vertical"/>
+</div>
+
+## Offset
+
+You can specify the number of column offset by setting the value of `offset` attribute of Col.
+
+<div class={style.container}>
+    <REPL defaultCode={snippetColumnOffset} deps={deps} orientation="vertical"/>
+</div>
+
+# API
+
+## Row
+
+```ts
+export interface IRowProps {
+  /**
+   * grid spacing
+   * @default 0
+   */
+  gutter?: number;
+  className?: string;
+}
+```
+
+## Col
+
+```ts
+export interface IColProps {
+  /**
+   * number of column the grid spans
+   * @default: 24
+   */
+  span?: number;
+  /**
+   * number of spacing on the left side of the grid
+   * @default: 0
+   */
+  offset?: number;
+  className?: string;
+}
+```

@@ -1,0 +1,19 @@
+import { RadioGroup } from "svelte-element";
+
+export default function _() {
+    
+    const defaultSelected = "3";
+
+    const radios = [
+        { value: "3", label: "Option A" },
+        { value: "6", label: "Option B" },
+        { value: "9", label: "Option C" }
+    ];
+
+    const handleSelectedChange = event => {
+        const { selected } = event.detail;
+        console.log(`selected: ${selected}`);
+    };
+
+    <RadioGroup radios={radios} defaultSelected={defaultSelected} onChange={handleSelectedChange} />;
+}

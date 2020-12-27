@@ -1,0 +1,11 @@
+# Overview
+
+Currently, there are not many components available. As planned, they will be divided into these groups:
+
+- Layout: provide skeleton of a site
+
+- Action: where interaction happens
+
+- Data: interact with it and provide data
+
+- Navigation

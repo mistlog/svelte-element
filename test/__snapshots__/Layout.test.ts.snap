@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col offset 1`] = `
+"<div class=\\"el-col el-col-24 el-col-offset-6\\"></div>
+"
+`;
+
+exports[`Col span 1`] = `
+"<div class=\\"el-col el-col-12\\"></div>
+"
+`;
+
+exports[`Col text only 1`] = `
+"<div class=\\"el-col el-col-24\\">Default Col</div>
+"
+`;
+
+exports[`Row text only 1`] = `
+"<div class=\\"el-row\\">Default Row</div>
+"
+`;

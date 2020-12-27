@@ -1,0 +1,58 @@
+{
+  "name": "svelte-element",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "rollup -c rollup.config.js -w",
+    "clean": "npm run clean:build && npm run clean:src && npm run clean:test",
+    "clean:build": "rimraf ./build",
+    "clean:src": "sd clean ./src",
+    "clean:test": "sd clean ./test",
+    "prebuild": "npm run clean:build && npm run clean:src",
+    "build": "sd build",
+    "build:docs": "rollup -c rollup.config.js",
+    "pretest": "sd transcribe ./src/component && sd transcribe ./test/assets",
+    "test": "jest --coverage",
+    "start": "sirv public --single"
+  },
+  "files": [
+    "build"
+  ],
+  "main": "./build/component/index.js",
+  "baseUrl": "https://mistlog.github.io/svelte-element/",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/svelte": "^3.0.0",
+    "@types/jest": "^26.0.13",
+    "@types/prismjs": "^1.16.1",
+    "babel-jest": "^26.3.0",
+    "jest": "^26.4.2",
+    "mdsvex": "^0.8.7",
+    "prettier": "^2.2.1",
+    "prismjs": "^1.21.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.28.2",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-svelte-draft": "0.0.5",
+    "rollup-plugin-terser": "^5.1.2",
+    "sirv-cli": "^0.4.6",
+    "svelte": "^3.31.0",
+    "svelte-jester": "^1.1.5",
+    "svelte-routing": "^1.4.2",
+    "svelte-types": "0.0.7",
+    "ts-jest": "^26.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "emotion": "^10.0.27"
+  }
+}

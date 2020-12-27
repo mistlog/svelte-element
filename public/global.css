@@ -1,0 +1,26 @@
+body {
+    /* font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol; */
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    margin: 0px;
+    min-width: 1280px;
+    overflow-y: hidden;
+    /* use 100% to enable local scroll*/
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    color: #1f2f3d;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 23px;
+}

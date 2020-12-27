@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu horizontal menu 1`] = `
+"<ul class=\\"el-menu el-menu--horizontal\\" style=\\"border-bottom: none\\">
+  <li class=\\"el-menu-item is-active\\">Tab1</li>
+  <li class=\\"el-menu-item\\">Tab2</li>
+</ul>
+"
+`;
+
+exports[`Menu open submenu 1`] = `
+"<ul class=\\"el-menu el-menu--vertical\\" style=\\"border-bottom: none\\">
+  <li class=\\"el-submenu is-opened\\">
+    <div class=\\"el-submenu__title\\">
+      Group A
+      <i class=\\"el-submenu__icon-arrow el-icon-arrow-down\\"></i>
+    </div>
+    <div style=\\"animation: __svelte_276924520_0 400ms linear 0ms 1 both\\">
+      <ul class=\\"el-menu el-menu--inline\\">
+        <li class=\\"el-menu-item is-active\\">Tab1</li>
+        <li class=\\"el-menu-item\\">Tab2</li>
+      </ul>
+    </div>
+  </li>
+</ul>
+"
+`;
+
+exports[`Menu select menu item 1`] = `
+"<ul class=\\"el-menu el-menu--horizontal\\" style=\\"border-bottom: none\\">
+  <li class=\\"el-menu-item\\">Tab1</li>
+  <li class=\\"el-menu-item is-active\\">Tab2</li>
+</ul>
+"
+`;
+
+exports[`Menu vertical menu 1`] = `
+"<ul class=\\"el-menu el-menu--vertical\\" style=\\"border-bottom: none\\">
+  <li class=\\"el-submenu\\">
+    <div class=\\"el-submenu__title\\">
+      Group A
+      <i class=\\"el-submenu__icon-arrow el-icon-arrow-down\\"></i>
+    </div>
+  </li>
+</ul>
+"
+`;

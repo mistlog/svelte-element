@@ -1,0 +1,94 @@
+---
+layout: docs
+---
+
+<script>
+    import snippetBasic from "./snippet/radio-basic.snippet";
+    import snippetDisabled from "./snippet/radio-disabled.snippet";
+    import snippetGroup from "./snippet/radio-group.snippet";
+  
+    import REPL from "../../editor/REPL";
+    import { Radio, RadioGroup } from "../../component/index";
+
+    const deps = {
+        "svelte-element": { Radio, RadioGroup }
+    };
+
+</script>
+
+# Radio
+
+Single selection among multiple options.
+
+## Basic usage
+
+Radio should not have too many options. Otherwise, use the Select component instead.
+
+<div>
+    <REPL defaultCode={snippetBasic} deps={deps} orientation="vertical" height={200}/>
+</div>
+
+## Disabled
+
+`disabled` attribute is used to disable the radio.
+
+<div>
+    <REPL defaultCode={snippetDisabled} deps={deps} orientation="vertical" height={200}/>
+</div>
+
+## Radio Group
+
+Suitable for choosing from some mutually exclusive options.
+
+<div>
+    <REPL defaultCode={snippetGroup} deps={deps} orientation="vertical"/>
+</div>
+
+# API
+
+## Radio
+
+```ts
+export interface IRadioProps {
+  /**
+   * checked state of radio
+   * @default false
+   */
+  checked?: boolean;
+  /**
+   * whether Radio is disabled
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * the value of radio
+   * @default ""
+   */
+  value?: string;
+  onChange?: InputOnChangeHandler;
+}
+```
+
+## Radio Group
+
+
+```ts
+export interface IRadioGroupProps {
+    radios: Array<IRadio>
+    defaultSelected?: string
+    /**
+     * triggers when the selected radio changes
+     */
+    onChange?: RadioGroupOnChangeHandler
+}
+
+export interface IRadio {
+    value: string
+    label: string
+}
+
+export type RadioGroupEvent = { detail: { selected: string } };
+export type RadioGroupOnChangeHandler = (event: Svelte.ChangeEvent<HTMLInputElement> & RadioGroupEvent) => void
+```
+
+

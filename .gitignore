@@ -1,0 +1,13 @@
+/node_modules/
+/public/build/
+
+.DS_Store
+
+src/**/*.svelte
+src/**/*.js
+!src/site/docs/layout/docs.svelte
+
+test/**/*.svelte
+
+coverage
+build

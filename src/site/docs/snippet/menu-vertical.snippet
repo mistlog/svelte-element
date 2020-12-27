@@ -1,0 +1,16 @@
+import { Menu, MenuItem, SubMenu } from "svelte-element";
+
+export default function _() {
+    <div style="width: 200px">
+        <Menu defaultSelected="tab1">
+            <SubMenu title="Group A">
+                <MenuItem key="tab1">Tab1</MenuItem>
+                <MenuItem key="tab2">Tab2</MenuItem>
+            </SubMenu>
+            <SubMenu title="Group B" isOpened={false}>
+                <MenuItem key="tab3">Tab3</MenuItem>
+                <MenuItem key="tab4">Tab4</MenuItem>
+            </SubMenu>
+        </Menu>
+    </div>
+}

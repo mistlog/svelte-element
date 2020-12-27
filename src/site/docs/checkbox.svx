@@ -1,0 +1,80 @@
+---
+layout: docs
+---
+
+<script>
+    import snippetBasic from "./snippet/checkbox-basic.snippet";
+    import snippetDisabled from "./snippet/checkbox-disabled.snippet";
+    import snippetGroup from "./snippet/checkbox-group.snippet";
+
+    import REPL from "../../editor/REPL";
+    import { Checkbox, CheckboxGroup } from "../../component/index";
+
+    const deps = {
+        "svelte-element": { Checkbox, CheckboxGroup }
+    };
+
+</script>
+
+# Checkbox
+
+A group of options for multiple choices.
+
+## Basic usage
+
+Checkbox can be used alone to switch between two states.
+
+<div>
+    <REPL defaultCode={snippetBasic} deps={deps} orientation="vertical" height={200}/>
+</div>
+
+## Disabled State
+
+Disabled state for checkbox.
+
+<div>
+    <REPL defaultCode={snippetDisabled} deps={deps} orientation="vertical" height={200}/>
+</div>
+
+## Checkbox group
+
+It is used for multiple checkboxes which are bound in one group, and indicates whether one option is selected by checking if it is checked.
+
+<div>
+    <REPL defaultCode={snippetGroup} deps={deps} orientation="vertical" height={400}/>
+</div>
+
+# API
+
+## Checkbox
+
+```ts
+export interface ICheckboxProps {
+    /**
+    * if the Checkbox is checked
+    * @default false
+    */
+    checked?: boolean
+    /**
+     * whether the Checkbox is disabled
+     * @default false
+     */
+    disabled?: boolean
+    onChange?: InputOnChangeHandler
+}
+```
+
+## Checkbox Group
+
+```ts
+export interface ICheckbox {
+    label: string
+    disabled?: boolean
+}
+
+export interface ICheckboxGroupProps {
+    options?: Array<ICheckbox>
+    defaultSelected?: Array<string>
+    onChange?: CheckboxGroupOnChangeHandler
+}
+```

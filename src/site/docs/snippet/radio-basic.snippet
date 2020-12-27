@@ -1,0 +1,14 @@
+import { Radio } from "svelte-element";
+
+export default function _() {
+    let state = "a";
+    const handleStateChange = event => {
+        state = event.target.value
+        console.log(`state: ${state}`);
+    };
+
+    <div>
+        <Radio value="a" checked={state === "a"} onChange={handleStateChange}>Option A</Radio>
+        <Radio value="b" checked={state === "b"} onChange={handleStateChange}>Option B</Radio>
+    </div>
+}

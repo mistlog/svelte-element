@@ -1,0 +1,18 @@
+import { CheckboxGroup } from "svelte-element";
+
+export default function _() {
+    const defaultSelected = ["Option A", "Selected and Disabled"];
+    const handleSelectedChange = event => {
+        const { selected } = event.detail;
+        console.log(`selected: ${selected}`);
+    };
+
+    const options = [
+        { label: "Option A" },
+        { label: "Option B" },
+        { label: "Option C" },
+        { label: "Disabled", disabled: true },
+        { label: "Selected and Disabled", disabled: true }
+    ];
+    <CheckboxGroup options={options} defaultSelected={defaultSelected} onChange={handleSelectedChange} />;
+}

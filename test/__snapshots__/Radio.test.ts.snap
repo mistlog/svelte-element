@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio text 1`] = `
+"<label class=\\"el-radio\\">
+  <span class=\\"el-radio__input\\">
+    <span class=\\"el-radio__inner\\"></span>
+    <input type=\\"radio\\" class=\\"el-radio__original\\" value=\\"\\" />
+  </span>
+  <span class=\\"el-radio__label\\">Option A</span>
+</label>
+"
+`;
+
+exports[`RadioGroup empty radio group 1`] = `
+"<body>
+  <div></div>
+</body>
+"
+`;
+
+exports[`RadioGroup radio group with radios 1`] = `
+"<body>
+  <div>
+    <label class=\\"el-radio\\">
+      <span class=\\"el-radio__input is-checked\\">
+        <span class=\\"el-radio__inner\\"></span>
+        <input type=\\"radio\\" class=\\"el-radio__original\\" value=\\"a\\" />
+      </span>
+      <span class=\\"el-radio__label\\">Option A</span>
+    </label>
+    <label class=\\"el-radio\\">
+      <span class=\\"el-radio__input\\">
+        <span class=\\"el-radio__inner\\"></span>
+        <input type=\\"radio\\" class=\\"el-radio__original\\" value=\\"b\\" />
+      </span>
+      <span class=\\"el-radio__label\\">Option B</span>
+    </label>
+  </div>
+</body>
+"
+`;
+
+exports[`RadioGroup radio group with radios 2`] = `
+"<body>
+  <div>
+    <label class=\\"el-radio\\">
+      <span class=\\"el-radio__input\\">
+        <span class=\\"el-radio__inner\\"></span>
+        <input type=\\"radio\\" class=\\"el-radio__original\\" value=\\"a\\" />
+      </span>
+      <span class=\\"el-radio__label\\">Option A</span>
+    </label>
+    <label class=\\"el-radio\\">
+      <span class=\\"el-radio__input is-checked\\">
+        <span class=\\"el-radio__inner\\"></span>
+        <input type=\\"radio\\" class=\\"el-radio__original\\" value=\\"b\\" />
+      </span>
+      <span class=\\"el-radio__label\\">Option B</span>
+    </label>
+  </div>
+</body>
+"
+`;
