@@ -14,5 +14,8 @@ export default function _() {
         { label: "Disabled", disabled: true },
         { label: "Selected and Disabled", disabled: true }
     ];
-    <CheckboxGroup options={options} defaultSelected={defaultSelected} onChange={handleSelectedChange} />;
+
+    <div>
+        <CheckboxGroup options={options} defaultSelected={defaultSelected} onChange={handleSelectedChange} />
+    </div>
 }

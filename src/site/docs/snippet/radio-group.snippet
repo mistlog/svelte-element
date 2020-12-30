@@ -15,5 +15,7 @@ export default function _() {
         console.log(`selected: ${selected}`);
     };
 
-    <RadioGroup radios={radios} defaultSelected={defaultSelected} onChange={handleSelectedChange} />;
+    <div>
+        <RadioGroup radios={radios} defaultSelected={defaultSelected} onChange={handleSelectedChange} />
+    </div>
 }
