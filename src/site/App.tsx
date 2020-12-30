@@ -5,6 +5,7 @@ import NavLink from "./lib/NavLink";
 import Skeleton from "../prefab/R1C2";
 
 //
+import QuickStart from "./docs/quick-start.svx";
 import Overview from "./docs/overview.svx";
 import LayoutDocs from "./docs/layout.svx";
 import ButtonDocs from "./docs/button.svx";
@@ -20,10 +21,10 @@ export default function _() {
 
         //@ts-ignore
         if (__BuildEnv__ === "prod") {
-            return name === "" || name === "svelte-element" ? "overview" : name;
+            return name === "" || name === "svelte-element" ? "quick-start" : name;
         }
 
-        return name === "" ? "overview" : name;
+        return name === "" ? "quick-start" : name;
     };
 
     let basepath = "/";
@@ -69,6 +70,8 @@ export default function _() {
 
             padding: 10px 20px 20px 40px;
 
+            pre.language-bash,
+            pre.language-html,
             pre.language-tsx,
             pre.language-ts {
                 display: inline-block;
@@ -76,6 +79,7 @@ export default function _() {
         `
     };
 
+    // TODO: support comment <MenuItem key="component">Component</MenuItem>
     <main
         class={css`
             height: 100%;
@@ -94,7 +98,6 @@ export default function _() {
             <div slot="menu">
                 <Menu defaultSelected="docs" mode="horizontal">
                     <MenuItem key="docs">Docs</MenuItem>
-                    <MenuItem key="component">Component</MenuItem>
                 </Menu>
             </div>
             <div slot="sidebar" class={style.sidebar.container}>
@@ -106,6 +109,9 @@ export default function _() {
                                 className={style.sidebar.menu}
                             >
                                 <NavLink to="/">
+                                    <MenuItem key="quick-start">Quick Start</MenuItem>
+                                </NavLink>
+                                <NavLink to="overview">
                                     <MenuItem key="overview">Overview</MenuItem>
                                 </NavLink>
                                 <SubMenu title="Layout">
@@ -138,7 +144,8 @@ export default function _() {
             </div>
             <div slot="content" class={style.docs}>
                 <Router basepath={basepath}>
-                    <Route path="/" component={Overview} />
+                    <Route path="/" component={QuickStart} />
+                    <Route path="overview" component={Overview} />
                     <Route path="layout" component={LayoutDocs} />
                     <Route path="button" component={ButtonDocs} />
                     <Route path="radio" component={RadioDocs} />

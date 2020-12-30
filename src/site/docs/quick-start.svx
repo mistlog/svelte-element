@@ -1,0 +1,43 @@
+# Quick Start
+
+This part walks you through the process of using Element in a rollup project.
+
+If you want to use [svelte-draft](https://mistlog.github.io/svelte-draft-docs/):
+
+```bash
+npx degit mistlog/svelte-element-template svelte-draft-app
+cd app
+npm install 
+npm run dev
+```
+
+Else if you want to use svelte: 
+
+```bash
+npx degit mistlog/vanilla-svelte-element-template svelte-app
+cd app
+npm install 
+npm run dev
+```
+
+# Installation
+
+Installing with npm is recommended and it works seamlessly with rollup.
+
+```bash
+npm i svelte-element
+```
+
+`rollup-plugin-node-globals` is necessary in order to use [emotion](https://emotion.sh/), install it and add it to your rollup config.
+
+```bash
+npm i -D rollup-plugin-node-globals
+```
+
+Get the latest style from [unpkg.com/element-ui](https://unpkg.com/element-ui) , and import CSS file in your page:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/element-ui@2.14.1/lib/theme-chalk/index.css">
+```
+
+[This commit](https://github.com/mistlog/vanilla-svelte-element-template/commit/c8182fc1b25171ab5b174096391ccd156a05a9e1) can be used as reference.
