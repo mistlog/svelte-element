@@ -24,7 +24,7 @@ npm run dev
 
 ## Documentation
 
-[https://mistlog.github.io/svelte-draft-docs/](https://mistlog.github.io/svelte-draft-docs/)
+[https://mistlog.github.io/svelte-element/](https://mistlog.github.io/svelte-element/)
 
 ## License
 
